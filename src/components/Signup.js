@@ -3,9 +3,6 @@ import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 
-import firebase from 'firebase/app';
-import { auth } from "../firebase";
-
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -53,7 +50,7 @@ export default function Signup() {
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          
+
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
